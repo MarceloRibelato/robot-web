@@ -9,7 +9,7 @@ Cenário 01: Login
     E preencho minhas credenciais
     Quando envio o formulário
     E faço as validações dos dados pessoais
-
+    Então devo visualizar "Dione kele" na tela
 
 
 
