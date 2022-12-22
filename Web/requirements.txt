@@ -1,3 +1,4 @@
 robotframework-seleniumlibrary
 robotframework-pabot
 robotframework
+webdriver-manager
