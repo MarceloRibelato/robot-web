@@ -27,6 +27,7 @@ jobs:
       with:
         python-version: '3.11' 
     - run: cd Web
+    - run: ls
     - run: pip install -r requirements.txt
     - run: robot features/GestaoOfertas.robot
 
