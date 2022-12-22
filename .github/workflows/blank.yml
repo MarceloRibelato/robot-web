@@ -26,8 +26,6 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.11' 
-    - run: cd Web
-    - run: ls
-    - run: pip install -r requirements.txt
-    - run: robot features/GestaoOfertas.robot
+    - run: pip install -r Web/requirements.txt
+    - run: robot Web/features/GestaoOfertas.robot
 
