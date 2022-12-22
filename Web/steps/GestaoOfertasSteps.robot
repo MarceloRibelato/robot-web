@@ -7,10 +7,17 @@ Resource    ../resources/Config.robot
 *** Keywords ***
 #### DADO
 que estou na página de login
-    Open Browser    ${URL}  ${BROWSER}  options=${CHROME_OPTIONS_WARNINGS}
+       Set Selenium Timeout    20s
+    ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
+    ...                     modules=selenium, selenium.webdriver
+    Call Method    ${chrome_options}   add_argument    headless
+    Call Method    ${chrome_options}   add_argument    --no-sandbox
+    Call Method    ${chrome_options}   add_argument    disable-gpu
+    Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
+    ${var}=     Call Method     ${chrome_options}    to_capabilities
+    Create Webdriver   driver_name=Chrome   alias=google   chrome_options=${chrome_options}
+    Go To   ${URL}
     Maximize Browser Window
-    Sleep    3
-    Title Should Be    ${TITLE}
 
 #### E
 
