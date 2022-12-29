@@ -9,7 +9,7 @@ Que estou na página de login do site Caduh
     Set Selenium Timeout    20s
     ${chrome options} =     Evaluate    selenium.webdriver.ChromeOptions()
     ...                     modules=selenium, selenium.webdriver
-    Call Method    ${chrome_options}   add_argument    headless
+   # Call Method    ${chrome_options}   add_argument    headless
     Call Method    ${chrome_options}   add_argument    --no-sandbox
     Call Method    ${chrome_options}   add_argument    disable-gpu
     Call Method    ${chrome_options}   add_argument    --ignore-certificate-errors
@@ -20,10 +20,10 @@ Que estou na página de login do site Caduh
 
 #### E
 Preencho minhas credenciais
-    Sleep               10s
+    Sleep    10
     Input Text          ${INPUT_EMAIL}                  ${USER_LOGIN}
     Click Element       ${BTN_AVANÇAR}
-    Sleep               10s
+    Sleep    10
     Input Text          ${INPUT_PWD}                    ${USER_SENHA}
     Click Element       ${BTN_AVANÇAR}
 

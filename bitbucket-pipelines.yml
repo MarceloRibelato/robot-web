@@ -1,0 +1,18 @@
+image: yamandevops/python-chromedriver
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: Test
+          caches:
+            - pip
+          script:
+            - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+            - robot -x junitresult.xml features
+            - pabot -x junitresult.xml --processes 4 --testlevelsplit features
+      - step:
+          name: Lint code
+          script:
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics

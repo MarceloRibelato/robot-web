@@ -5,7 +5,7 @@ Dado ${keyword}
 Quando ${keyword}
     Run keyword   ${keyword}
 
-Então ${keyword}
+Entao ${keyword}
     Run keyword   ${keyword}
 
 E ${keyword}
